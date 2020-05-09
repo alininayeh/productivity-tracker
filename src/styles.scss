@@ -23,11 +23,13 @@ body {
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   min-height: 100%;
   background: white;
   width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 
   @media (min-width: 780px) {
     width: 400px;
@@ -38,19 +40,14 @@ body {
 
   h1 {
     font-size: 28px;
-    margin: 10px 0;
-
-    @media (min-height: 400px) {
-      margin: 20px 0;
-    }
+    margin: 0;
   }
+}
 
-  .App-placeholder {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.Vote-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .Vote {
@@ -99,5 +96,18 @@ body {
 
   &.down {
     background-color: $red;
+  }
+}
+
+.Button {
+  button {
+    background: $green;
+    padding: 10px;
+    color: white;
+    border: none;
+  }
+
+  a {
+    color: black;
   }
 }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
 import Vote from "./components/Vote";
-import { DataManager } from "./utils/DataManager";
+import Button from "./components/Button";
+import DataManager from "./utils/DataManager";
 
 export default function App() {
   const [dayRating, setDayRating] = useState();
@@ -28,18 +29,19 @@ export default function App() {
   return (
     <div className="App">
       <h1>Hello</h1>
-      <div className="App-placeholder">
+      <div className="Vote-placeholder">
         <Vote
           label="How was your day?"
-          onVote={rating => onVote("DAY", rating)}
+          onVote={(rating) => onVote("DAY", rating)}
           rating={dayRating}
         />
         <Vote
           label="How was your mood?"
-          onVote={rating => onVote("MOOD", rating)}
+          onVote={(rating) => onVote("MOOD", rating)}
           rating={moodRating}
         />
       </div>
+      <Button label="Add notes" type="link" />
     </div>
   );
 }

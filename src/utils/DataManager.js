@@ -1,4 +1,4 @@
-export const DataManager = {
+const DataManager = {
   save(type, rating) {
     const data = this.getData();
     const today = new Date().toDateString();
@@ -36,3 +36,5 @@ export const DataManager = {
     return JSON.parse(data);
   }
 };
+
+export default DataManager;
