@@ -1,5 +1,5 @@
 const DataManager = {
-  save(type, rating) {
+  save(type = "", rating = "", notes = "") {
     const data = this.getData();
     const today = new Date().toDateString();
     let lastDay = this.load();
@@ -8,13 +8,15 @@ const DataManager = {
       data[data.length - 1] = {
         date: lastDay.date,
         day: type === "DAY" ? rating : lastDay.day,
-        mood: type === "MOOD" ? rating : lastDay.mood
+        mood: type === "MOOD" ? rating : lastDay.mood,
+        notes: notes ? notes : lastDay.notes
       };
     } else {
       data.push({
         date: today,
         day: type === "DAY" ? rating : "",
-        mood: type === "MOOD" ? rating : ""
+        mood: type === "MOOD" ? rating : "",
+        notes: notes
       });
     }
 
