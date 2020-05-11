@@ -1,0 +1,51 @@
+@import "./variables";
+
+.Stats-no-stats {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.Stats {
+    flex: 1;
+    margin-top: 20px;
+    overflow: auto;
+    width: 100%;
+
+    .Stats-row {
+        display: flex;
+        padding: 10px 0;
+
+        .Stats-date {
+            flex-basis: 150px;
+            text-align: left;
+        }
+
+        .Stats-rating {
+            flex: 1;
+            height: 20px;
+            margin-left: 10px;
+
+            &.up {
+                background: $green;
+            }
+
+            &.down {
+                background: $red;
+            }
+        }
+
+        .Stats-info {
+            color: $mediumGrey;
+            margin-left: 5px;
+        }
+    }
+
+    .Stats-header {
+        color: $mediumGrey;
+
+        .Stats-rating {
+            height: auto;
+        }
+    }
+}

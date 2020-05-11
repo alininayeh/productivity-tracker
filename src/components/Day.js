@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Vote from "./components/Vote";
-import Button from "./components/Button";
-import DataManager from "./utils/DataManager";
-import ButtonGroup from "./components/ButtonGroup";
-import Notes from "./components/Notes";
-import Header from "./components/Header";
-import "./styles/main.scss";
+import Vote from "./Vote";
+import Button from "./Button";
+import DataManager from "../utils/DataManager";
+import ButtonGroup from "./ButtonGroup";
+import Notes from "./Notes";
+import "../styles/day.scss";
 
-export default function App() {
+const Day = () => {
   const [dayRating, setDayRating] = useState();
   const [moodRating, setMoodRating] = useState();
   const [notes, setNotes] = useState();
@@ -46,8 +45,7 @@ export default function App() {
   });
 
   return (
-    <div className="App">
-      <Header title="Hello" />
+    <>
       <div className="Vote-placeholder">
         <Vote
           label="How was your day?"
@@ -61,9 +59,19 @@ export default function App() {
         />
       </div>
       <ButtonGroup>
-        <Button label={!notes ? "Add a note" : "Edit notes"} onClick={onShowNotes} />
+        <Button
+          label={!notes ? "Add a note" : "Edit notes"}
+          onClick={onShowNotes}
+        />
       </ButtonGroup>
-      <Notes hidden={!showNotes} data={notes} onSubmit={submitNotes} onCancel={cancelNotes} />
-    </div>
+      <Notes
+        hidden={!showNotes}
+        data={notes}
+        onSubmit={submitNotes}
+        onCancel={cancelNotes}
+      />
+    </>
   );
-}
+};
+
+export default Day;

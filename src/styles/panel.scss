@@ -2,6 +2,7 @@
 
 .Panel {
   position: fixed;
+  z-index: 100;
 
   .Panel-background {
     position: fixed;

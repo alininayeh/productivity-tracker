@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -6,8 +7,9 @@ import Panel from "./Panel";
 import "../styles/header.scss";
 library.add(faBars);
 
-const Header = ({ title }) => {
+const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const pathname = useLocation().pathname;
 
   function openMenu() {
     setShowMenu(true);
@@ -15,6 +17,10 @@ const Header = ({ title }) => {
 
   function closeMenu() {
     setShowMenu(false);
+  }
+
+  function getTitle() {
+    return pathname.indexOf("stats") === -1 ? "Hello" : "Stats";
   }
 
   function getToday() {
@@ -32,12 +38,12 @@ const Header = ({ title }) => {
         </span>
         <Panel hidden={!showMenu} position="left">
           <nav className="Header-menu-list">
-            <a href="#" onClick={closeMenu}>Your day</a>
-            <a href="#" onClick={closeMenu}>See graph</a>
+            <Link to="/" onClick={closeMenu}>Your day</Link>
+            <Link to="/stats" onClick={closeMenu}>Stats</Link>
           </nav>
         </Panel>
       </div>
-      <h1>{title}</h1>
+      <h1>{getTitle()}</h1>
       <span className="Header-date">{getToday()}</span>
     </div>
   );
