@@ -1,0 +1,16 @@
+@import "./variables";
+
+.ButtonGroup {
+    padding: 0;
+    display: flex;
+    width: 100%;
+  
+    .Button {
+      flex: 1;
+      margin-right: 10px;
+  
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }

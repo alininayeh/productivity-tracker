@@ -1,0 +1,36 @@
+@import "./variables";
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: white;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.Vote-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

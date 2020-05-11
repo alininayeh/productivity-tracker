@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/button-group.scss";
 
 const ButtonGroup = ({children}) => {
     return (

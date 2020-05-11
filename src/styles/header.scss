@@ -1,0 +1,44 @@
+@import "./variables";
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  
+    h1 {
+      font-size: 24px;
+      margin: 0;
+      flex: 1;
+      text-align: left;
+      margin-left: 20px;
+  
+      @media (min-height: 400px) {
+        font-size: 28px;
+      }
+    }
+  
+    .Header-menu {
+      .Header-menu-button {
+        color: $mediumGrey;
+        font-size: 18px;
+      }
+
+      .Header-menu-list {
+        padding: 0 40px;
+        
+        a {
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: black;
+        }
+      }
+    }
+  
+    .Header-date {
+      color: $mediumGrey;
+      font-size: 16px;
+    }
+  }

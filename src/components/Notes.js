@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ButtonGroup from "./ButtonGroup";
 import Button from "./Button";
+import Panel from "./Panel";
+import "../styles/notes.scss";
 
 const Notes = ({hidden, onSubmit, onCancel, data}) => {
     const [note, setNote] = useState(data);
@@ -14,16 +16,15 @@ const Notes = ({hidden, onSubmit, onCancel, data}) => {
     }, [data]);
 
     return (
-        <div className={"Notes" + (hidden ? " hidden" : "")}>
-            <div className="Notes-background" />
-            <div className="Notes-placeholder">
-                <textarea onChange={onNoteChange} value={note} placeholder="Add a note"></textarea>
+        <Panel hidden={hidden} position="bottom">
+            <div className="Notes">
+            <textarea onChange={onNoteChange} value={note} placeholder="Add a note"></textarea>
                 <ButtonGroup>
                     <Button label="Save" type="green" onClick={() => onSubmit(note)} />
                     <Button label="Cancel" onClick={onCancel} />
                 </ButtonGroup>
             </div>
-        </div>
+        </Panel>
     );
 };
 

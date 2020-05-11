@@ -1,5 +1,6 @@
 import React from "react";
 import Thumb from "./Thumb";
+import "../styles/vote.scss";
 
 const Vote = ({ label, onVote, rating }) => {
   function vote(rating) {

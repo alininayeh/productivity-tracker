@@ -1,0 +1,28 @@
+@import "./variables";
+
+.Thumb {
+  cursor: pointer;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  color: white;
+  user-select: none;
+  transition: opacity 0.3s;
+
+  @media (min-height: 400px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  &.up {
+    background-color: $green;
+  }
+
+  &.down {
+    background-color: $red;
+  }
+}

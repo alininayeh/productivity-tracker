@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./styles.scss";
 import Vote from "./components/Vote";
 import Button from "./components/Button";
 import DataManager from "./utils/DataManager";
 import ButtonGroup from "./components/ButtonGroup";
 import Notes from "./components/Notes";
+import Header from "./components/Header";
+import "./styles/main.scss";
 
 export default function App() {
   const [dayRating, setDayRating] = useState();
@@ -46,7 +47,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <Header title="Hello" />
       <div className="Vote-placeholder">
         <Vote
           label="How was your day?"
