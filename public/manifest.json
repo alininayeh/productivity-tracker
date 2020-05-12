@@ -1,0 +1,15 @@
+{
+    "short_name": "Stay Productive",
+    "name": "Stay Productive",
+    "icons": [
+      {
+        "src": "stay-productive.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      }	    
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#d32f2f",
+    "background_color": "#ffffff"
+  }
