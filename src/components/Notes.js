@@ -13,7 +13,7 @@ const Notes = ({hidden, onSubmit, onCancel, data}) => {
 
     useEffect(() => {
         setNote(data);
-    }, [data]);
+    }, [data, hidden]);
 
     return (
         <Panel hidden={hidden} position="bottom">
